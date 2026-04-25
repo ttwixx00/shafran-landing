@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Премиальный лендинг отеля Шафран с кинематографичной анимацией и плавным скроллом."
+    />
+    <title>Отель «Шафран»</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              saffron: {
+                ink: "#120d0a",
+                chocolate: "#2a1e18",
+                cocoa: "#3a2a21",
+                cream: "#f4eadb",
+                linen: "#fbf6ee",
+                gold: "#c8a46a",
+                bronze: "#8b6a45",
+              },
+            },
+            fontFamily: {
+              display: ["Cormorant Garamond", "serif"],
+              sans: ["Manrope", "sans-serif"],
+            },
+            boxShadow: {
+              warm: "0 24px 80px rgba(56, 33, 18, 0.22)",
+              glow: "0 0 0 1px rgba(200, 164, 106, 0.28), 0 24px 70px rgba(200, 164, 106, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body class="bg-saffron-linen font-sans text-saffron-ink antialiased">
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+    <header class="site-header fixed inset-x-0 top-0 z-50">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-10">
+        <a class="font-display text-3xl font-semibold tracking-normal text-saffron-cream" href="#hero">
+          Шафран
+        </a>
+
+        <nav class="hidden items-center gap-8 text-sm font-semibold uppercase tracking-[0.18em] text-saffron-cream/80 md:flex">
+          <a href="#about">О нас</a>
+          <a href="#rooms">Номера</a>
+          <a href="#services">Услуги</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+
+        <a class="header-booking hidden md:inline-flex" href="#booking">Забронировать</a>
+
+        <button class="mobile-menu md:hidden" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-panel md:hidden" aria-hidden="true">
+        <nav class="flex flex-col gap-5 px-5 pb-6 text-sm font-semibold uppercase tracking-[0.18em] text-saffron-cream">
+          <a href="#about">О нас</a>
+          <a href="#rooms">Номера</a>
+          <a href="#services">Услуги</a>
+          <a href="#gallery">Галерея</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="hero" class="hero-section relative isolate flex min-h-screen items-center overflow-hidden text-saffron-cream">
+        <div class="absolute inset-0 -z-20 overflow-hidden">
+          <img class="hero-image h-full w-full object-cover" src="./images/hero.jpg" alt="Фасад отеля Шафран вечером" />
+        </div>
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-black/65 via-[#160e09]/62 to-[#160e09]/80"></div>
+
+        <div class="mx-auto w-full max-w-7xl px-5 pt-24 sm:px-8 lg:px-10">
+          <div class="max-w-6xl">
+            <p class="hero-kicker mb-6 text-sm font-semibold uppercase tracking-[0.34em] text-saffron-gold">
+              Отель в сердце города
+            </p>
+            <h1
+              class="hero-title font-display text-5xl font-semibold uppercase leading-[0.95] tracking-normal sm:text-7xl lg:text-8xl"
+              data-split
+            >
+              УЮТ, КОМФОРТ И ГОСТЕПРИИМСТВО
+            </h1>
+            <p class="hero-copy mt-8 max-w-2xl text-base leading-8 text-saffron-cream/78 sm:text-lg">
+              Теплая тишина, благородные материалы и внимательный сервис для тех, кто ценит отдых без лишнего шума.
+            </p>
+            <a class="primary-button mt-10 inline-flex" href="#booking">ЗАБРОНИРОВАТЬ НОМЕР</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" class="booking-shell relative z-20 mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        <form class="booking-panel" action="#" aria-label="Форма бронирования">
+          <label>
+            <span>Заезд</span>
+            <input type="text" name="arrival" placeholder="Выберите дату" />
+          </label>
+          <label>
+            <span>Выезд</span>
+            <input type="text" name="departure" placeholder="Выберите дату" />
+          </label>
+          <label>
+            <span>Гости</span>
+            <select name="guests">
+              <option>1 гость</option>
+              <option selected>2 гостя</option>
+              <option>3 гостя</option>
+              <option>4 гостя</option>
+            </select>
+          </label>
+          <button type="submit">Найти номер</button>
+        </form>
+      </section>
+
+      <section id="about" class="section-space overflow-hidden bg-saffron-linen">
+        <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-10">
+          <div class="about-copy reveal-text">
+            <p class="section-kicker">О нас</p>
+            <h2 class="section-title">МЕСТО, ГДЕ ХОЧЕТСЯ ВОЗВРАЩАТЬСЯ</h2>
+            <p class="mt-7 text-lg leading-9 text-saffron-cocoa/78">
+              «Шафран» создан для спокойных поездок, важных встреч и неспешных выходных. В каждой детали здесь есть
+              ощущение частного дома: приглушенный свет, мягкие фактуры, бережная тишина и персональное внимание.
+            </p>
+            <div class="mt-10 grid grid-cols-2 gap-6 border-t border-saffron-bronze/20 pt-8">
+              <div>
+                <strong class="font-display text-5xl font-semibold text-saffron-chocolate">24</strong>
+                <span class="mt-2 block text-sm uppercase tracking-[0.18em] text-saffron-cocoa/60">часа заботы</span>
+              </div>
+              <div>
+                <strong class="font-display text-5xl font-semibold text-saffron-chocolate">38</strong>
+                <span class="mt-2 block text-sm uppercase tracking-[0.18em] text-saffron-cocoa/60">уютных номеров</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-reveal about-image h-[420px] overflow-hidden rounded-[8px] shadow-warm sm:h-[560px]">
+            <img
+              class="parallax-image h-[115%] w-full object-cover"
+              src="./images/reception.jpg"
+              alt="Ресепшн отеля Шафран"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="rooms" class="section-space bg-saffron-chocolate text-saffron-cream">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div class="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p class="section-kicker text-saffron-gold">Номера</p>
+              <h2 class="section-title max-w-3xl text-saffron-cream">ПРОСТРАНСТВА ДЛЯ ТИХОГО ОТДЫХА</h2>
+            </div>
+            <p class="max-w-md text-base leading-8 text-saffron-cream/66">
+              От лаконичного стандарта до камерного люкса: мягкий свет, плотный текстиль и продуманный ритм каждого
+              номера.
+            </p>
+          </div>
+
+          <div class="room-grid grid gap-6 md:grid-cols-3">
+            <article class="room-card">
+              <a href="#booking" aria-label="Забронировать номер Стандарт">
+                <div class="room-media">
+                  <img src="./images/room-1.jpg" alt="Номер Стандарт" />
+                </div>
+                <div class="p-6">
+                  <p class="text-sm uppercase tracking-[0.2em] text-saffron-gold">от 5 900 ₽</p>
+                  <h3 class="mt-3 font-display text-4xl font-semibold">Стандарт</h3>
+                  <p class="mt-4 leading-7 text-saffron-cream/68">
+                    Спокойный номер для коротких поездок и деловых остановок.
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <article class="room-card">
+              <a href="#booking" aria-label="Забронировать номер Полулюкс">
+                <div class="room-media">
+                  <img src="./images/room-2.jpg" alt="Номер Полулюкс" />
+                </div>
+                <div class="p-6">
+                  <p class="text-sm uppercase tracking-[0.2em] text-saffron-gold">от 8 900 ₽</p>
+                  <h3 class="mt-3 font-display text-4xl font-semibold">Полулюкс</h3>
+                  <p class="mt-4 leading-7 text-saffron-cream/68">
+                    Больше воздуха, мягкая зона отдыха и выразительные детали.
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <article class="room-card">
+              <a href="#booking" aria-label="Забронировать номер Люкс">
+                <div class="room-media">
+                  <img src="./images/room-3.jpg" alt="Номер Люкс" />
+                </div>
+                <div class="p-6">
+                  <p class="text-sm uppercase tracking-[0.2em] text-saffron-gold">от 13 900 ₽</p>
+                  <h3 class="mt-3 font-display text-4xl font-semibold">Люкс</h3>
+                  <p class="mt-4 leading-7 text-saffron-cream/68">
+                    Отдельная гостиная, глубокая тишина и приватное настроение.
+                  </p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section-space bg-saffron-linen">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div class="mb-12 max-w-3xl">
+            <p class="section-kicker">Услуги</p>
+            <h2 class="section-title">ВСЕ, ЧТО НУЖНО ДЛЯ СПОКОЙНОГО ПРЕБЫВАНИЯ</h2>
+          </div>
+
+          <div class="services-grid grid gap-px overflow-hidden rounded-[8px] border border-saffron-bronze/16 bg-saffron-bronze/16 sm:grid-cols-2 lg:grid-cols-5">
+            <div class="service-item">
+              <i data-lucide="wifi" aria-hidden="true"></i>
+              <span>Беспроводной интернет</span>
+            </div>
+            <div class="service-item">
+              <i data-lucide="car" aria-hidden="true"></i>
+              <span>Парковка</span>
+            </div>
+            <div class="service-item">
+              <i data-lucide="route" aria-hidden="true"></i>
+              <span>Трансфер</span>
+            </div>
+            <div class="service-item">
+              <i data-lucide="utensils" aria-hidden="true"></i>
+              <span>Ресторан</span>
+            </div>
+            <div class="service-item">
+              <i data-lucide="sparkles" aria-hidden="true"></i>
+              <span>Спа-зона</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section-space bg-[#efe2d0]">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          <div class="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p class="section-kicker">Галерея</p>
+              <h2 class="section-title">ДЕТАЛИ, ИЗ КОТОРЫХ СКЛАДЫВАЕТСЯ НАСТРОЕНИЕ</h2>
+            </div>
+            <p class="max-w-md leading-8 text-saffron-cocoa/70">
+              Приглушенный блеск, мягкие ткани и теплый свет, который делает вечер длиннее.
+            </p>
+          </div>
+
+          <div class="gallery-grid grid gap-4 md:grid-cols-4 md:grid-rows-[260px_260px]">
+            <figure class="gallery-item md:col-span-2 md:row-span-2">
+              <img src="./images/gallery-1.jpg" alt="Интерьер отеля Шафран" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="./images/gallery-2.jpg" alt="Детали номера" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="./images/gallery-3.jpg" alt="Ресторан отеля" />
+            </figure>
+            <figure class="gallery-item md:col-span-2">
+              <img src="./images/gallery-4.jpg" alt="Зона отдыха" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section relative isolate min-h-[620px] overflow-hidden text-saffron-cream">
+        <img class="cta-bg absolute inset-0 -z-20 h-[120%] w-full object-cover" src="./images/cta-bg.jpg" alt="Текстура интерьера отеля" />
+        <div class="absolute inset-0 -z-10 bg-[#120d0a]/78"></div>
+        <div class="mx-auto flex min-h-[620px] max-w-5xl flex-col items-center justify-center px-5 text-center sm:px-8">
+          <p class="section-kicker text-saffron-gold">Время остановиться</p>
+          <h2 class="font-display text-5xl font-semibold uppercase leading-none tracking-normal sm:text-7xl">
+            Ваш спокойный вечер начинается здесь
+          </h2>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-saffron-cream/72">
+            Выберите номер, а мы подготовим тишину, свет и внимательное гостеприимство к вашему приезду.
+          </p>
+          <a class="primary-button pulse-button mt-10 inline-flex" href="#booking">ЗАБРОНИРОВАТЬ</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contacts" class="site-footer bg-saffron-ink text-saffron-cream">
+      <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1fr_1fr_1fr] lg:px-10">
+        <div>
+          <a class="font-display text-4xl font-semibold" href="#hero">Шафран</a>
+          <p class="mt-5 max-w-sm leading-8 text-saffron-cream/60">
+            Премиальный отель для тех, кто выбирает тишину, вкус и уверенный уровень сервиса.
+          </p>
+        </div>
+
+        <nav class="footer-links">
+          <a href="#about">О нас</a>
+          <a href="#rooms">Номера</a>
+          <a href="#services">Услуги</a>
+          <a href="#gallery">Галерея</a>
+        </nav>
+
+        <div class="space-y-5">
+          <p class="text-sm uppercase tracking-[0.22em] text-saffron-gold">Контакты</p>
+          <address class="not-italic leading-8 text-saffron-cream/68">
+            Москва, Садовая улица, 18<br />
+            +7 495 000 00 00<br />
+            почта@шафран.рф
+          </address>
+          <div class="social-links" aria-label="Социальные сети">
+            <a href="#" aria-label="Инстаграм"><i data-lucide="instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Телеграм"><i data-lucide="send" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Сообщения"><i data-lucide="message-circle" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

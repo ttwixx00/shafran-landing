@@ -1,0 +1,10 @@
+# Local exported originals. The site uses optimized copies from /images.
+/ChatGPT Image *.png
+/XXXL (4).webp
+/блок.png
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
