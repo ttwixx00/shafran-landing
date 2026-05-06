@@ -254,72 +254,6 @@ body .hero-copy {
   transform: scaleX(1);
 }
 
-.booking-shell {
-  margin-top: -4.25rem;
-}
-
-.booking-panel {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  overflow: hidden;
-  border: 1px solid rgba(139, 106, 69, 0.16);
-  border-radius: 8px;
-  background: rgba(251, 246, 238, 0.96);
-  box-shadow: 0 22px 70px rgba(58, 42, 33, 0.2);
-  opacity: 0;
-  transform: translateY(42px);
-}
-
-.booking-panel label {
-  display: grid;
-  min-height: 6.4rem;
-  align-content: center;
-  gap: 0.55rem;
-  border-right: 1px solid rgba(139, 106, 69, 0.16);
-  padding: 1.1rem 1.35rem;
-}
-
-.booking-panel span {
-  color: rgba(58, 42, 33, 0.58);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.booking-panel input,
-.booking-panel select {
-  width: 100%;
-  border: 0;
-  background: transparent;
-  color: var(--chocolate);
-  font-size: 1rem;
-  font-weight: 700;
-  outline: 0;
-}
-
-.booking-panel input::placeholder {
-  color: rgba(58, 42, 33, 0.46);
-}
-
-.booking-panel button {
-  min-height: 6.4rem;
-  background: var(--chocolate);
-  color: var(--cream);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  transition:
-    background 0.8s var(--ease-luxury),
-    color 0.8s var(--ease-luxury);
-}
-
-.booking-panel button:hover {
-  background: var(--gold);
-  color: var(--ink);
-}
-
 .section-space {
   padding-block: clamp(5.5rem, 8vw, 9rem);
 }
@@ -474,23 +408,6 @@ body .hero-copy {
 }
 
 @media (max-width: 900px) {
-  .booking-shell {
-    margin-top: -2.5rem;
-  }
-
-  .booking-panel {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .booking-panel label:nth-child(2) {
-    border-right: 0;
-  }
-
-  .booking-panel button {
-    grid-column: span 2;
-  }
-}
-
 @media (max-width: 640px) {
   body .hero-title {
     font-size: clamp(1.55rem, 7.1vw, 2.2rem);
@@ -503,25 +420,6 @@ body .hero-copy {
 
   .hero-section {
     min-height: 760px;
-  }
-
-  .booking-shell {
-    margin-top: -1.75rem;
-  }
-
-  .booking-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .booking-panel label {
-    min-height: 5.4rem;
-    border-right: 0;
-    border-bottom: 1px solid rgba(139, 106, 69, 0.16);
-  }
-
-  .booking-panel button {
-    grid-column: auto;
-    min-height: 5.4rem;
   }
 
   .gallery-grid {
@@ -551,7 +449,6 @@ body .hero-copy {
   .hero-kicker,
   .hero-copy,
   .primary-button,
-  .booking-panel,
   .room-card,
   .service-item,
   .gallery-item,
