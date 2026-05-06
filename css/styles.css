@@ -182,6 +182,33 @@ body .hero-title {
   will-change: transform;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+
+.hero-phone-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.hero-phone-list a {
+  color: rgba(244, 234, 219, 0.82);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transition: color 0.8s var(--ease-luxury);
+}
+
+.hero-phone-list a:hover {
+  color: var(--gold);
+}
+
 body .hero-copy {
   max-width: min(42rem, calc(100vw - 2.5rem));
   overflow-wrap: anywhere;
@@ -418,6 +445,16 @@ body .hero-copy {
     max-width: 19rem;
   }
 
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-phone-list {
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
   .hero-section {
     min-height: 760px;
   }
@@ -449,6 +486,7 @@ body .hero-copy {
   .hero-kicker,
   .hero-copy,
   .primary-button,
+  .hero-phone-list,
   .room-card,
   .service-item,
   .gallery-item,

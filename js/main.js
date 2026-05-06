@@ -99,6 +99,7 @@ function initLenis() {
 function initAnimations() {
   if (!window.gsap || !window.ScrollTrigger || hasReducedMotion) {
     document.querySelector(".hero-section")?.style.setProperty("opacity", "1");
+    document.querySelector(".hero-phone-list")?.style.setProperty("opacity", "1");
     return;
   }
 
@@ -123,7 +124,7 @@ function initAnimations() {
     .to(".hero-kicker", { opacity: 1, y: 0, duration: 0.9 }, 0.25)
     .to(".split-word", { yPercent: 0, duration: 1.05, stagger: 0.08 }, 0.45)
     .to(".hero-copy", { opacity: 1, y: 0, duration: 0.95 }, 0.9)
-    .to(".hero-section .primary-button", { opacity: 1, y: 0, duration: 0.95 }, 1.05);
+    .to(".hero-section .primary-button, .hero-phone-list", { opacity: 1, y: 0, duration: 0.95 }, 1.05);
 
   gsap.fromTo(
     ".about-copy",
