@@ -73,6 +73,28 @@ function initImageFallbacks() {
   });
 }
 
+function initCookieBanner() {
+  const banner = document.querySelector("[data-cookie-banner]");
+  const acceptButton = document.querySelector("[data-cookie-accept]");
+
+  if (!banner || !acceptButton) {
+    return;
+  }
+
+  const storageKey = "shafran_cookie_accepted";
+
+  if (window.localStorage.getItem(storageKey) === "true") {
+    return;
+  }
+
+  banner.classList.add("is-visible");
+
+  acceptButton.addEventListener("click", () => {
+    window.localStorage.setItem(storageKey, "true");
+    banner.classList.remove("is-visible");
+  });
+}
+
 function initLenis() {
   if (hasReducedMotion || !window.Lenis || !window.gsap || !window.ScrollTrigger) {
     return null;
@@ -232,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderState();
   initIcons();
   initImageFallbacks();
+  initCookieBanner();
   initLenis();
   initAnimations();
 });

@@ -434,7 +434,65 @@ body .hero-copy {
   font-weight: 700;
 }
 
-@media (max-width: 900px) {
+.legal-details p + p {
+  margin-top: 0.2rem;
+}
+
+.cookie-banner {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 80;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  max-width: 58rem;
+  margin-inline: auto;
+  border: 1px solid rgba(200, 164, 106, 0.32);
+  border-radius: 8px;
+  background: rgba(18, 13, 10, 0.92);
+  box-shadow: 0 22px 70px rgba(18, 13, 10, 0.28);
+  color: var(--cream);
+  padding: 1rem 1.1rem;
+  backdrop-filter: blur(18px);
+}
+
+.cookie-banner.is-visible {
+  display: flex;
+}
+
+.cookie-banner p {
+  max-width: 45rem;
+  color: rgba(244, 234, 219, 0.76);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.cookie-banner button {
+  flex: 0 0 auto;
+  min-height: 2.8rem;
+  border: 1px solid rgba(200, 164, 106, 0.64);
+  border-radius: 4px;
+  padding: 0.75rem 1.2rem;
+  color: var(--cream);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    background 0.8s var(--ease-luxury),
+    color 0.8s var(--ease-luxury),
+    border-color 0.8s var(--ease-luxury);
+}
+
+.cookie-banner button:hover {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--ink);
+}
+
 @media (max-width: 640px) {
   body .hero-title {
     font-size: clamp(1.55rem, 7.1vw, 2.2rem);
@@ -461,6 +519,18 @@ body .hero-copy {
 
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cookie-banner {
+    align-items: stretch;
+    flex-direction: column;
+    right: 0.8rem;
+    bottom: 0.8rem;
+    left: 0.8rem;
+  }
+
+  .cookie-banner button {
+    width: 100%;
   }
 }
 
